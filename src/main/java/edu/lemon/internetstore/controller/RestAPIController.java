@@ -4,6 +4,7 @@ import edu.lemon.internetstore.service.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.beans.Transient;
 import java.util.List;
 import java.util.Map;
 
