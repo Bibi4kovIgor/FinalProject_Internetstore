@@ -1,4 +1,4 @@
-package edu.lemon.internetstore.controller;
+package edu.lemon.internetstore.web.rest;
 
 import edu.lemon.internetstore.service.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
