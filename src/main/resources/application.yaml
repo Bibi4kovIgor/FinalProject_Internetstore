@@ -23,3 +23,7 @@ spring:
       - "public"
     locations:
       - classpath:/migrations/
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: ".html"

@@ -44,4 +44,7 @@ public class ProductsEntity {
                 mappedBy = "products")
     Set<CategoriesEntity> categories;
 
+
+    
+
 }
