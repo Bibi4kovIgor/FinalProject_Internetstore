@@ -8,7 +8,7 @@ import java.time.Instant;
 import java.util.UUID;
 
 @Builder
-public record ClientsDto(
+public record ClientDto(
     UUID id,
     @Size(min=2, max=30, message = "First name must be from 2 to 30 chars")
     String firstName,
@@ -37,5 +37,5 @@ public record ClientsDto(
     String password,
 
     Instant birthDate,
-    DocumentsDto document
+    DocumentDto document
 ) {}

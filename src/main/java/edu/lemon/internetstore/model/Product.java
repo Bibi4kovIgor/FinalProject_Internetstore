@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.util.HashSet;
 import java.util.List;
 import java.util.UUID;
 
@@ -17,7 +16,7 @@ import java.util.UUID;
 @Builder
 @Entity
 @Table(name = "products", schema = "public")
-public class Products {
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
@@ -43,7 +42,7 @@ public class Products {
     @ManyToMany(cascade = CascadeType.ALL,
                 fetch = FetchType.EAGER,
                 mappedBy = "products")
-    List<Categories> categories;
+    List<Category> categories;
 
 
 }

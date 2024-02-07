@@ -2,7 +2,7 @@ package edu.lemon.internetstore.service;
 
 import edu.lemon.internetstore.dao.OrdersRepository;
 import edu.lemon.internetstore.mapper.OrdersMapper;
-import edu.lemon.internetstore.web.dto.OrdersDto;
+import edu.lemon.internetstore.web.dto.OrderDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,7 +18,7 @@ public class OrdersService {
     this.ordersMapper = ordersMapper;
   }
 
-  public List<OrdersDto> getOrdersInfo() {
+  public List<OrderDto> getOrdersInfo() {
     return ordersRepository.findAll().stream()
         .map(ordersMapper::toDto)
         .toList();

@@ -5,4 +5,8 @@ import lombok.Builder;
 import java.util.UUID;
 
 @Builder
-public record DocumentsDto(UUID id, Long taxId, String passport, String additionalInfo) {}
+public record CategoryDto(
+        UUID id,
+        String name,
+        String description
+) {}

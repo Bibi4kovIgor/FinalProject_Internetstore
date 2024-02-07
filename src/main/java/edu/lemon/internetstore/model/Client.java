@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.Instant;
-import java.util.Set;
 import java.util.UUID;
 
 @Data
@@ -13,7 +12,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Entity
 @Table(name = "clients")
-public class Clients {
+public class Client {
 
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
@@ -46,6 +45,6 @@ public class Clients {
       orphanRemoval = true)
   @JoinColumn(name = "document_id",
       referencedColumnName = "id")
-  @NonNull private Documents document;
+  @NonNull private Document document;
 
 }

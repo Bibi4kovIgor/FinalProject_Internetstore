@@ -2,7 +2,7 @@ package edu.lemon.internetstore.service;
 
 import edu.lemon.internetstore.dao.ClientsRepository;
 import edu.lemon.internetstore.mapper.ClientsMapper;
-import edu.lemon.internetstore.web.dto.ClientsDto;
+import edu.lemon.internetstore.web.dto.ClientDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,7 +17,7 @@ public class ClientsService {
     this.clientsMapper = clientsMapper;
   }
 
-  public List<ClientsDto> getAllClients(){
+  public List<ClientDto> getAllClients(){
     return clientsRepository.findAll()
         .stream()
         .map(clientsMapper::toDto)

@@ -1,7 +1,7 @@
 package edu.lemon.internetstore.mapper;
 
-import edu.lemon.internetstore.model.Orders;
-import edu.lemon.internetstore.web.dto.OrdersDto;
+import edu.lemon.internetstore.model.Order;
+import edu.lemon.internetstore.web.dto.OrderDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 /**
@@ -14,7 +14,11 @@ import org.mapstruct.Mapping;
 public interface OrdersMapper {
   @Mapping(target = "clientDto", source = "client")
   @Mapping(target = "productDto", source = "product")
-  OrdersDto toDto(Orders orders);
+  OrderDto toDto(Order order);
+
+  @Mapping(target = "client", source = "clientDto")
+  @Mapping(target = "product", source = "productDto")
+  Order fromDto(OrderDto orderDto);
 
 //  private final ClientsMapper clientsMapper;
 //  private final ProductsMapper productsMapper;
@@ -24,8 +28,8 @@ public interface OrdersMapper {
 //    this.productsMapper = productsMapper;
 //  }
 
-//  public OrdersDto toDto(Orders orders) {
-//    return OrdersDto.builder()
+//  public OrderDto toDto(Order orders) {
+//    return OrderDto.builder()
 //        .clientsDto(clientsMapper.toDto(orders.getClient()))
 //        .orderDate(orders.getOrderDate())
 //        .quantity(orders.getQuantity())

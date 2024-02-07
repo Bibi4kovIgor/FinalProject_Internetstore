@@ -5,11 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.engine.internal.ForeignKeys;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.UUID;
 
 @Data
@@ -18,7 +15,7 @@ import java.util.UUID;
 @Builder
 @Table(name = "categories")
 @Entity
-public class Categories {
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
@@ -34,5 +31,5 @@ public class Categories {
             name = "products_categories",
             joinColumns = @JoinColumn(name = "category_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id"))
-    private List<Products> products;
+    private List<Product> products;
 }

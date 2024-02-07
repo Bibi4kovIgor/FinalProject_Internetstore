@@ -2,7 +2,7 @@ package edu.lemon.internetstore.service;
 
 import edu.lemon.internetstore.dao.DocumentsRepository;
 import edu.lemon.internetstore.mapper.DocumentsMapper;
-import edu.lemon.internetstore.web.dto.DocumentsDto;
+import edu.lemon.internetstore.web.dto.DocumentDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,7 +17,7 @@ public class DocumentsService {
     this.documentsRepository = documentsRepository;
   }
 
-  public List<DocumentsDto> getAllDocuments(){
+  public List<DocumentDto> getAllDocuments(){
     return documentsRepository.findAll()
         .stream()
         .map(documentsMapper::toDto)

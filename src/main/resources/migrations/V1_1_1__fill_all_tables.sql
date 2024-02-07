@@ -1,7 +1,7 @@
 create extension if not exists pgcrypto;
 
 
--- categories
+-- category
 insert into categories(name, description) values
 ('electronics', 'radioelectronics equipment'),
 ('household', 'different household stuff'),
@@ -43,7 +43,7 @@ insert into products_categories(product_id, category_id) values
 ((SELECT * FROM get_id_from_table(5, 'products')), (SELECT * FROM get_id_from_table(0, 'categories'))),
 ((SELECT * FROM get_id_from_table(5, 'products')), (SELECT * FROM get_id_from_table(2, 'categories')));
 
--- documents
+-- document
 insert into documents(tax_id, passport, additional_info) values
 (11155544874, '447AAAd', ' '),
 (12354542542, 'DD21312', 'Some additional info'),
@@ -56,7 +56,7 @@ insert into documents(tax_id, passport, additional_info) values
 (65785544874, '5764474', 'Info'),
 (22235090922, '7JJ4765', 'Qwerty');
 
--- clients
+-- client
 insert into clients(first_name, last_name, phone, birth_date, login, email, password, document_id) values
 ('Ihor', 'Bibichkov', '+38077478544', '1991-12-22'::timestamp,'Ihor_Bibichkov', 'work.bibi4kov@gmail.com',
  crypt('password_default', gen_salt('bf')), (SELECT * FROM get_id_from_table(0, 'documents'))),
@@ -69,7 +69,7 @@ insert into clients(first_name, last_name, phone, birth_date, login, email, pass
 ('Mark', 'Tsuckerberg', '+1589654114', '1979-7-5'::timestamp, 'mark_meta','work_meta@gmail.com',
  crypt('password_default_445', gen_salt('bf')), (SELECT * FROM get_id_from_table(4, 'documents')));
 
--- orders
+-- order
 insert into orders(client_id, product_id, quantity, order_date) values
 ((SELECT get_id_from_table(0, 'clients')), (SELECT get_id_from_table(0, 'products')), 1, NOW()::timestamp),
 ((SELECT get_id_from_table(1, 'clients')), (SELECT get_id_from_table(1, 'products')), 3, NOW()::timestamp),

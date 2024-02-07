@@ -12,18 +12,18 @@ import java.time.Instant;
 @Entity
 @Table(name = "orders")
 @IdClass(OrdersPk.class)
-public class Orders {
+public class Order {
   @Id
   @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
   @JoinColumn(name = "client_id", referencedColumnName = "id")
   @NonNull
-  private Clients client;
+  private Client client;
 
   @Id
   @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
   @JoinColumn(name = "product_id", referencedColumnName = "id")
   @NonNull
-  private Products product;
+  private Product product;
 
   @Id
   @NonNull

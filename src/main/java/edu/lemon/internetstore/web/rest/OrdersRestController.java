@@ -1,12 +1,10 @@
 package edu.lemon.internetstore.web.rest;
 
 import edu.lemon.internetstore.service.OrdersService;
-import edu.lemon.internetstore.web.dto.OrdersDto;
-import edu.lemon.internetstore.web.dto.ProductsDto;
+import edu.lemon.internetstore.web.dto.OrderDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -23,7 +21,7 @@ public class OrdersRestController {
   }
 
   @GetMapping
-  public ResponseEntity<List<OrdersDto>> getOrders() {
+  public ResponseEntity<List<OrderDto>> getOrders() {
     return ResponseEntity.ok(ordersService.getOrdersInfo());
   }
 

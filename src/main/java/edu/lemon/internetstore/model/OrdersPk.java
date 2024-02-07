@@ -10,7 +10,7 @@ import java.time.Instant;
 @NoArgsConstructor
 @AllArgsConstructor
 public class OrdersPk implements Serializable {
-  private Clients client;
-  private Products product;
+  private Client client;
+  private Product product;
   private Instant orderDate;
 }

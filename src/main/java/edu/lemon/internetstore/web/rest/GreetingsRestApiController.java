@@ -1,7 +1,7 @@
 package edu.lemon.internetstore.web.rest;
 
 import edu.lemon.internetstore.service.CategoriesService;
-import edu.lemon.internetstore.web.dto.CategoriesDto;
+import edu.lemon.internetstore.web.dto.CategoryDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +19,7 @@ public class GreetingsRestApiController {
     }
 
     @GetMapping
-    public ResponseEntity<List<CategoriesDto>> getCategories(){
+    public ResponseEntity<List<CategoryDto>> getCategories(){
         return ResponseEntity.ok(categoriesService.getCategories());
     }
 

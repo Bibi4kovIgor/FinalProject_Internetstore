@@ -1,8 +1,7 @@
 package edu.lemon.internetstore.web.rest;
 
-import edu.lemon.internetstore.dao.DocumentsRepository;
 import edu.lemon.internetstore.service.DocumentsService;
-import edu.lemon.internetstore.web.dto.DocumentsDto;
+import edu.lemon.internetstore.web.dto.DocumentDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +20,7 @@ public class DocumentsRestApiController {
   }
 
   @GetMapping
-  public ResponseEntity<List<DocumentsDto>> getAllDocuments(){
+  public ResponseEntity<List<DocumentDto>> getAllDocuments(){
     return ResponseEntity.ok(documentsService.getAllDocuments());
   }
 
