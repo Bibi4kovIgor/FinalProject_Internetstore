@@ -2,11 +2,14 @@ package edu.lemon.internetstore.web.dto;
 
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
+import lombok.Builder;
 
 import java.time.Instant;
+import java.util.UUID;
 
+@Builder
 public record ClientsDto(
-    String id,
+    UUID id,
     @Size(min=2, max=30, message = "First name must be from 2 to 30 chars")
     String firstName,
     @Size(min=2, max=30, message = "First name must be from 2 to 30 chars")
@@ -33,5 +36,6 @@ public record ClientsDto(
                     """)
     String password,
 
-    Instant birthDate
+    Instant birthDate,
+    DocumentsDto document
 ) {}

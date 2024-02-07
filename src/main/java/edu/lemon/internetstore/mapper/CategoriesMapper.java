@@ -1,18 +1,11 @@
 package edu.lemon.internetstore.mapper;
 
-import edu.lemon.internetstore.model.CategoriesEntity;
+import edu.lemon.internetstore.model.Categories;
 import edu.lemon.internetstore.web.dto.CategoriesDto;
-import org.springframework.stereotype.Component;
+import org.mapstruct.Mapper;
 
-@Component
-public class CategoriesMapper {
-
-    public CategoriesDto toDto(CategoriesEntity categoriesEntity) {
-        return CategoriesDto.builder()
-                .id(categoriesEntity.getId())
-                .name(categoriesEntity.getName())
-                .description(categoriesEntity.getDescription())
-                .build();
-    }
+@Mapper(componentModel = "spring")
+public interface CategoriesMapper {
+  CategoriesDto toDto(Categories categories);
 
 }

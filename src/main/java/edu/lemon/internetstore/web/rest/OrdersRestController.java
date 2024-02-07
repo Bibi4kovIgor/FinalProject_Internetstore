@@ -22,9 +22,9 @@ public class OrdersRestController {
     this.ordersService = ordersService;
   }
 
-//  @GetMapping
-//  public ResponseEntity<List<OrdersDto>> getOrders() {
-//    return ResponseEntity.ok(ordersService.getOrdersInfo());
-//  }
+  @GetMapping
+  public ResponseEntity<List<OrdersDto>> getOrders() {
+    return ResponseEntity.ok(ordersService.getOrdersInfo());
+  }
 
 }

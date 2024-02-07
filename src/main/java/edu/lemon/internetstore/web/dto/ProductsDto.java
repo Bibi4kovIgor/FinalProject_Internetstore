@@ -3,7 +3,7 @@ package edu.lemon.internetstore.web.dto;
 import lombok.Builder;
 
 import java.math.BigDecimal;
-import java.util.Set;
+import java.util.List;
 import java.util.UUID;
 
 @Builder
@@ -15,5 +15,5 @@ public record ProductsDto(
         boolean availability,
         BigDecimal price,
         String description,
-        Set<CategoriesDto> categories
+        List<CategoriesDto> categories
 ) {}
