@@ -38,7 +38,10 @@ insert into products_categories(product_id, category_id) values
 ((SELECT * FROM get_id_from_table(2, 'products')), (SELECT * FROM get_id_from_table(2, 'categories'))),
 ((SELECT * FROM get_id_from_table(3, 'products')), (SELECT * FROM get_id_from_table(3, 'categories'))),
 ((SELECT * FROM get_id_from_table(4, 'products')), (SELECT * FROM get_id_from_table(4, 'categories'))),
-((SELECT * FROM get_id_from_table(5, 'products')), (SELECT * FROM get_id_from_table(3, 'categories')));
+((SELECT * FROM get_id_from_table(5, 'products')), (SELECT * FROM get_id_from_table(3, 'categories'))),
+((SELECT * FROM get_id_from_table(4, 'products')), (SELECT * FROM get_id_from_table(1, 'categories'))),
+((SELECT * FROM get_id_from_table(5, 'products')), (SELECT * FROM get_id_from_table(0, 'categories'))),
+((SELECT * FROM get_id_from_table(5, 'products')), (SELECT * FROM get_id_from_table(2, 'categories')));
 
 -- documents
 insert into documents(tax_id, passport, additional_info) values

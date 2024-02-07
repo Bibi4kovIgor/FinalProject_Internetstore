@@ -11,19 +11,19 @@ import java.time.Instant;
 @NoArgsConstructor
 @Entity
 @Table(name = "orders")
-@IdClass(OrdersPkEntity.class)
-public class OrdersEntity {
+@IdClass(OrdersPk.class)
+public class Orders {
   @Id
   @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-  @JoinColumn(name = "client_id")
+  @JoinColumn(name = "client_id", referencedColumnName = "id")
   @NonNull
-  private ClientsEntity clients;
+  private Clients client;
 
   @Id
   @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
   @JoinColumn(name = "product_id", referencedColumnName = "id")
   @NonNull
-  private ProductsEntity products;
+  private Products product;
 
   @Id
   @NonNull

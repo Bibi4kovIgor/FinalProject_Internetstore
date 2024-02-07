@@ -11,7 +11,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Entity
 @Table(name = "documents")
-public class DocumentsEntity {
+public class Documents {
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
   @NonNull private UUID id;

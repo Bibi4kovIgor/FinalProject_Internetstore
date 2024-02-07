@@ -13,7 +13,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Entity
 @Table(name = "clients")
-public class ClientsEntity {
+public class Clients {
 
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
@@ -46,11 +46,6 @@ public class ClientsEntity {
       orphanRemoval = true)
   @JoinColumn(name = "document_id",
       referencedColumnName = "id")
-  @NonNull private DocumentsEntity document;
+  @NonNull private Documents document;
 
-  @OneToMany(fetch = FetchType.EAGER,
-      cascade = CascadeType.ALL,
-      orphanRemoval = true,
-      mappedBy = "clients")
-  private Set<OrdersEntity> order;
 }
