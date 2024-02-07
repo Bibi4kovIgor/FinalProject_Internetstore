@@ -1,7 +1,6 @@
 package edu.lemon.internetstore.web.controller;
 
 import edu.lemon.internetstore.service.ProductsService;
-import edu.lemon.internetstore.web.rest.ProductsRestApiController;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
