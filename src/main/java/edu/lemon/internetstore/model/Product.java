@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.BatchSize;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -42,7 +43,6 @@ public class Product {
     @ManyToMany(cascade = CascadeType.ALL,
                 fetch = FetchType.EAGER,
                 mappedBy = "products")
+    @BatchSize(size = 20)
     List<Category> categories;
-
-
 }

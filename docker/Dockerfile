@@ -4,3 +4,5 @@ EXPOSE 5432
 ENV POSTGRES_USER admin
 ENV POSTGRES_PASSWORD admin
 ENV POSTGRES_DB internetstore
+
+CMD ["postgres", "-c", "log_statement=all"]

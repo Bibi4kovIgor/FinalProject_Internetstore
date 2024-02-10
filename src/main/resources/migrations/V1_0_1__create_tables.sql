@@ -26,6 +26,9 @@ create table if not exists products_categories (
     foreign key(product_id) references products(id)
 );
 
+CREATE INDEX products_categories_category_idx ON products_categories (category_id);
+CREATE INDEX products_categories_product_idx ON products_categories (product_id);
+
 create table if not exists documents (
    id uuid default uuid_generate_v4(),
    tax_id bigint unique not null,
@@ -52,6 +55,8 @@ create table if not exists clients (
     foreign key(document_id) references documents(id)
 );
 
+CREATE INDEX clients_document_idx ON clients (document_id);
+
 create table if not exists orders (
     client_id uuid not null,
     product_id uuid not null,
@@ -61,4 +66,7 @@ create table if not exists orders (
     foreign key(client_id) references clients(id),
     foreign key(product_id) references products(id)
 );
+
+CREATE INDEX orders_client_idx ON orders (client_id);
+CREATE INDEX orders_product_idx ON orders (product_id);
 
