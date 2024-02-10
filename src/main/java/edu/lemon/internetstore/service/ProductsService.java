@@ -3,6 +3,7 @@ package edu.lemon.internetstore.service;
 import edu.lemon.internetstore.dao.ProductsRepository;
 import edu.lemon.internetstore.mapper.ProductsMapper;
 import edu.lemon.internetstore.web.dto.ProductDto;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,6 +23,14 @@ public class ProductsService {
                 .map(productsMapper::toDto)
                 .toList();
 
+    }
+
+    public List<ProductDto> getProductsPageable(int fromIndex, int quantity) {
+      PageRequest pageable = PageRequest.of(fromIndex, quantity);
+      return productsRepository
+          .findAll(pageable)
+          .map(productsMapper::toDto)
+          .toList();
     }
 
   public ProductDto createProduct(ProductDto productDto) {

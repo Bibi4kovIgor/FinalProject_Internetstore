@@ -25,6 +25,13 @@ public class ProductsRestApiController {
     return ResponseEntity.ok(productsService.getProducts());
   }
 
+  @GetMapping("/{from}/{quantity}")
+  public ResponseEntity<List<ProductDto>> getProducts(
+      @PathVariable(value = "from", required = false) int from,
+      @PathVariable(value = "quantity", required = false) int quantity) {
+    return ResponseEntity.ok(productsService.getProductsPageable(from, quantity));
+  }
+
   @PostMapping("/add-product")
   public ResponseEntity<ProductDto> createProduct(@RequestBody @Valid ProductDto productDto) {
     return ResponseEntity.status(HttpStatus.CREATED)

@@ -11,10 +11,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/categories")
-public class GreetingsRestApiController {
+public class CategoriesRestApiController {
     private final CategoriesService categoriesService;
 
-    public GreetingsRestApiController(CategoriesService categoriesService) {
+    public CategoriesRestApiController(CategoriesService categoriesService) {
         this.categoriesService = categoriesService;
     }
 
@@ -22,5 +22,4 @@ public class GreetingsRestApiController {
     public ResponseEntity<List<CategoryDto>> getCategories(){
         return ResponseEntity.ok(categoriesService.getCategories());
     }
-
 }
