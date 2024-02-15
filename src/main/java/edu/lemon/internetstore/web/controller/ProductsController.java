@@ -3,6 +3,7 @@ package edu.lemon.internetstore.web.controller;
 import edu.lemon.internetstore.service.ProductsService;
 import edu.lemon.internetstore.web.dto.ProductDto;
 import jakarta.validation.Valid;
+import org.springframework.boot.web.servlet.server.Session;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -28,13 +29,6 @@ public class ProductsController {
         "/pages/products",
         new ModelMap()
             .addAttribute("products", productsService.getProducts())
-            .addAttribute("productType", ProductDto.getEmptyProductObject())
     );
-  }
-
-  @PostMapping(path = "/add-product", consumes = "application/x-www-form-urlencoded")
-  public RedirectView createProduct(ProductDto productDto) {
-    productsService.createProduct(productDto);
-    return new RedirectView("/products");
   }
 }

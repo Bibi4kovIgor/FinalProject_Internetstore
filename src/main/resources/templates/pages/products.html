@@ -36,63 +36,6 @@
                 </tbody>
             </table>
         </div>
-
-        <div id="productForm">
-            <form th:action="@{/products/add-product}" th:object="${productType}"
-                  method="post"
-                  class="row g-3 needs-validation">
-                <div class="col-md-4">
-                    <label for="name" class="form-label">Title</label>
-                    <input type="text" th:field="*{name}" placeholder="Title" class="form-control">
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <label for="quantity" class="form-label">Quantity</label>
-                    <input type="text" th:field="*{quantity}" placeholder="Quantity" class="form-control">
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-
-                </div>
-                <div class="col-md-4">
-                    <label for="price" class="form-label">Price</label>
-                    <input type="text" th:field="*{price}" placeholder="Price" class="form-control">
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <label for="vendorCode" class="form-label">Vendor Code</label>
-                    <input type="text" th:field="*{vendorCode}" placeholder="Warehouse number" class="form-control">
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <label for="description" class="form-label">Description</label>
-                    <textarea th:field="*{description}"
-                              placeholder="Product description"
-                              rows="3" class="form-control"></textarea>
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-
-                    <div class="col-md-4">
-                        <label for="availability" class="form-label">availability</label>
-                        <input type="hidden" value="true" th:field="*{availability}">
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                    </div>
-                </div>
-                <div class="col-auto">
-                    <span><input type="submit" value="save" class="btn btn-primary mb-3"></span>
-                    <span><input type="reset" value="cancel" class="btn btn-primary mb-3"></span>
-                </div>
-            </form>
-        </div>
     </div>
 </section>
 </body>
