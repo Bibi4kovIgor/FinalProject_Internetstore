@@ -37,5 +37,4 @@ public class RestAPIController {
     return "Hello, user, your params are: " + name.entrySet();
   }
 
-
 }

@@ -1,5 +1,6 @@
 package edu.lemon.internetstore.web.dto;
 
+import edu.lemon.internetstore.utils.Role;
 import lombok.Builder;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -10,7 +11,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Builder
-public record UserDto(String name, String pass, String role) implements UserDetails {
+public record UserDto(String name, String pass, Role role) implements UserDetails {
 
   /**
    * Returns the authorities granted to the user. Cannot return <code>null</code>.
@@ -20,7 +21,7 @@ public record UserDto(String name, String pass, String role) implements UserDeta
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
     List<GrantedAuthority> authorities = new ArrayList<>();
-    authorities.add(new SimpleGrantedAuthority(role));
+    authorities.add(new SimpleGrantedAuthority(role.name()));
     return authorities;
   }
 

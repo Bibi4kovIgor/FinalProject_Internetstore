@@ -22,8 +22,8 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "user_list")
-public class User {
 
+public class User {
   @Id
   @Column(name = "name")
   private String name;
